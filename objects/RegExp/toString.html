@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Javasctipt RegExp.toString()</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+  <script type="text/javascript">
+
+    function init() {
+
+      var out = document.getElementById('out');
+
+      out.innerHTML = /(foo|bar).baz/.toString(); //     /(foo|bar).baz/
+    }
+
+  </script>
+</head>
+<body onload="init();">
+
+  <div id="out"></div>
+
+</body>
+</html>
+
+
+
