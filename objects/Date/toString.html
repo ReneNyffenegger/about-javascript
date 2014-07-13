@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Javasctipt Date.toString()</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+  <script type="text/javascript">
+
+    function init() {
+
+      var out = document.getElementById('out');
+
+      var dat = new Date();
+
+      out.innerHTML = dat.toString();  // for example: «Sun Jul 13 2014 19:53:37 GMT+0200»
+    }
+
+  </script>
+</head>
+<body onload="init();">
+
+  <div id="out"></div>
+
+</body>
+</html>
+
+
