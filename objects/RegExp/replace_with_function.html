@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>JavaScript RegExp replace() with a function</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function makeLetterAfterUnderscoreUppercase(str) {
+
+       var str_replaced = str.replace(/_(.)/, function(entire_match, paranthesis_match) { return "_" + paranthesis_match.toUpperCase(); });
+
+       out.innerHTML += "Turned <code>" + str  + "</code> into <code>" + str_replaced + "</code><br>";
+    }
+
+    function main() {
+
+       out = document.getElementById('out');
+
+       makeLetterAfterUnderscoreUppercase("foo_bar_baz" );
+       makeLetterAfterUnderscoreUppercase("AAA_BBB_CCC" );
+      
+    }
+     
+  </script>
+</head>
+<body onload="main();">
+
+  <div id="out">
+  </div>
+   
+  <p><code>replace()</code> is a <a href='../String/replace.html'>String Object method</a>.
+  
+</body>
+</html>
