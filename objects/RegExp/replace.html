@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>JavaScript RegExp replace()</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function replaceNumberWithX(str) {
+
+       var str_replaced = str.replace(/\d/g, 'X');
+
+       out.innerHTML += "Turned <code>" + str  + "</code> into <code>" + str_replaced + "</code><br>";
+    }
+
+    function main() {
+
+       out = document.getElementById('out');
+
+       replaceNumberWithX("foo 2222 bar" );
+       replaceNumberWithX("bar one baz"  );
+       replaceNumberWithX("apples 4 ever");
+      
+    }
+     
+  </script>
+</head>
+<body onload="main();">
+
+  <div id="out">
+  </div>
+   
+
+</body>
+</html>
