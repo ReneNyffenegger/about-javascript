@@ -8,9 +8,9 @@
 
     var out;
 
-    function replaceNumberWithX(str) {
+    function replaceFooWithBar(str) {
 
-       var str_replaced = str.replace(/\d/g, 'X');
+       var str_replaced = str.replace('Foo', 'Bar');
 
        out.innerHTML += "Turned <code>" + str  + "</code> into <code>" + str_replaced + "</code><br>";
     }
@@ -19,9 +19,9 @@
 
        out = document.getElementById('out');
 
-       replaceNumberWithX("foo 2222 bar" );
-       replaceNumberWithX("bar one baz"  );
-       replaceNumberWithX("apples 4 ever");
+       replaceFooWithBar("A Foo and a Baz");
+       replaceFooWithBar("a foo and a baz");
+       replaceFooWithBar("Foo foo Foo foo");
       
     }
      
@@ -31,8 +31,9 @@
 
   <div id="out">
   </div>
-   
-  <p><code>replace()</code> is a <a href='../String/replace.html'>String Ojbect method</a>.
+
+  <p><code>replace()</code> can also be used with <a href='../RegExp/replace.html'>Regular Expressions</a>.
   
+
 </body>
 </html>
