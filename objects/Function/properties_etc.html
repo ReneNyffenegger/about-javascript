@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Test</title>
+
+  <script type='text/javascript' src='matrix.js'></script>
+
+<script type='text/javascript'>
+
+    var out;
+
+    function print_out(text) {
+        out.innerHTML += '<br>' + text;
+    }
+
+    function init() {
+      
+        out = document.getElementById('out');
+
+        var f = function(a, b, c) {alert(a + b + c)};
+
+        print_out('typeof(f): ' + typeof(f));
+        print_out('f: '         + "<code>" + f + "</code>");
+        
+        print_out('typeof(f.prototype): ' + typeof(f.prototype));
+
+        print_out('<b>Properties of a function:</b>');
+  
+        var f_props = Object.getOwnPropertyNames(f);
+        for (var elem in f_props) {
+          print_out('> ' + f_props[elem] + ": " + f[f_props[elem]]);
+        }
+
+        print_out('the end');
+
+    }
+
+</script>
+
+</head>
+
+<body onLoad='init()'>
+
+  <div id='out'>
+    <b>Out</b>:
+  </div>
+
+</body>
+</html>
