@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascript: this</title>
+  <script type="text/javascript">
+
+    var out;
+
+    function print(text) {
+      out.innerHTML += text + "<br>";
+    }
+
+    function main() {
+      
+      out = document.getElementById('out');
+
+      print(this); // [object Window]
+      
+      var obj = {a: 'aha'};
+
+      obj.f = function() { print(this.a); };
+
+      obj.f(); // aha
+
+    }
+
+    function clicked() {
+      print(this);
+    }
+
+  </script>
+</head>
+<body onload='main();'>
+
+  <!-- In the following line, «this» refers to the div element, in the called «clicked» function, this is the «window» object -->
+  <div onclick='print(this); this.innerHTML = "clicked"; clicked();' style='background-color:yellow'><b>Click Me</b></div><br>
+
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
