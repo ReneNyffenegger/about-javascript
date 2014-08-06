@@ -23,6 +23,10 @@
 
       obj.f(); // aha
 
+      document.getElementById('click-too').onclick = function() {
+        print(this); // [object HTMLDivElement]
+      }
+
     }
 
     function clicked() {
@@ -34,7 +38,8 @@
 <body onload='main();'>
 
   <!-- In the following line, «this» refers to the div element, in the called «clicked» function, this is the «window» object -->
-  <div onclick='print(this); this.innerHTML = "clicked"; clicked();' style='background-color:yellow'><b>Click Me</b></div><br>
+  <div onclick='print(this); this.innerHTML = "clicked"; clicked();' style='background-color:yellow'><b>Click me</b></div><br>
+  <div id='click-too'                                                style='background-color:pink'  ><b>Click me, too</b></div><br>
 
 
   <div id='out'>
