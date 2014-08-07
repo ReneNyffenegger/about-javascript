@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Closures</title>
+</head>
+  <script type="text/javascript">
+
+
+    function create_function (a) {
+
+      return function() {
+               return a;
+             }
+    }
+
+    function create_functions() {
+
+       var f = {};
+       var x;
+
+       for (var i=0; i<10; i++) {
+
+          f['func_' + i] = function() {
+            return i;
+          }
+
+          x = i;
+
+          f['FUNC_' + i] = function() {
+            return x;
+          }
+
+          f['cnuf_' + i] = create_function(i);
+
+       }
+
+       return f;
+    }
+
+    function show(text) {
+      document.getElementById('out').innerHTML += text + "<br>";
+    }
+
+    function main() {
+
+      funcs = create_functions();
+
+      show( funcs.func_1() );  // 10
+      show( funcs.func_5() );  // 10
+
+      show( funcs.FUNC_1() );  //  9
+      show( funcs.FUNC_5() );  //  9
+      
+      show( funcs.cnuf_1() );  //  1
+      show( funcs.cnuf_5() );  //  5
+
+    }
+
+  </script>
+<body onload='main();'>
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
+
