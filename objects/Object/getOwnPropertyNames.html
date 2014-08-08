@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>getOwnPropertyName</title>
+
+  <script type="text/javascript">
+    
+    function main() {
+
+      var obj = {foo: 42, bar: 0};
+
+      Object.getOwnPropertyNames(obj).sort().map(function(p) {
+        document.getElementById('out').innerHTML += p + "<br>"; // Own property names are: «foo» and «bar»
+      });
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
