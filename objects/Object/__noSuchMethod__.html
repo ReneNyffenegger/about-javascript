@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>__noSuchMethod__</title>
+
+  <script type="text/javascript">
+    
+    function main() {
+
+      var out = document.getElementById('out');
+
+      var obj = {};
+
+      obj.__noSuchMethod__ = function(func_name, func_args) {
+        out.innerHTML += 'Inexistent function <b>' + func_name + '</b> was called with <i>' + func_args.join(',') + '</i><br>';
+      }
+
+      obj.bar = function (func_args) {
+        out.innerHTML += '<b>bar</b> was called with <i>' + func_args + '</i><br>';
+      }
+
+      obj.foo(1, 2, 3);                 // Inexistent function foo was called with 1,2,3
+      obj.bar('one', 'two', 'three');   // bar was called with one
+      obj.baz('baz');                   // Inexistent function baz was called with baz
+        
+    }
+
+      
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
+
