@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Adding days</title>
+
+  <script type="text/javascript">
+    
+    function main() {
+
+      var out = document.getElementById('out');
+      
+      var dt = new Date (2014, 7, 11); // Aug 11th 2014
+
+      dt.setDate(dt.getDate() + 17);   // 17 days laters (= Aug 28th 2014)
+
+      out.innerHTML = dt.toString();
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id='out'></div>
+
+</body>
+</html>
+
