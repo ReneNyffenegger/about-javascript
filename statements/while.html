@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>while</title>
+
+  <script type="text/javascript">
+
+    g_counter = 5;
+
+    function dec_counter() {
+
+      g_counter --;
+      return g_counter != 0;
+
+    }
+
+    function dec_counter_2() {
+
+      g_counter --;
+      return g_counter;
+
+    }
+    
+    function main() {
+
+      var out = document.getElementById('out');
+
+      var i = 0;
+
+      while (dec_counter()) {
+        out.innerHTML += i + "<br>";
+        i++;
+      }
+
+      out.innerHTML += '-----<br>';
+
+      g_counter = 5;
+
+      var c;
+      while ( c = dec_counter_2() ) {
+        out.innerHTML += c + "<br>";
+      }
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'>
+  </div>
+</body>
+</html>
+
+
