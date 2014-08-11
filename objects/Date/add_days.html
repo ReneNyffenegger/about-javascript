@@ -12,9 +12,11 @@
       
       var dt = new Date (2014, 7, 11); // Aug 11th 2014
 
-      dt.setDate(dt.getDate() + 17);   // 17 days later (= Aug 28th 2014)
+      dt.setDate(dt.getDate() + 17 );   // 17 days later (= Aug 28th 2014)
+      out.innerHTML += dt.toString() + "<br>";
 
-      out.innerHTML = dt.toString();
+      dt.setDate(dt.getDate() + 365);   // Aug 28th 2015
+      out.innerHTML += dt.toString() + "<br>";
 
     }
 
