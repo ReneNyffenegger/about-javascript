@@ -7,11 +7,17 @@
   <script type="text/javascript">
     function main() {
 
+      var out = document.getElementById('out')
+
       var months_are_zero_based = 1; // 1 = February!!!!
-    
       var dt = new Date (2014, months_are_zero_based, 20, 9, 17, 22);
 
-      document.getElementById('out').innerHTML = dt.toString();
+      out.innerHTML = dt.toString() + "<br>";  // Thu Feb 20 2014 09:17:22 GMT+0100
+
+      dt = new Date ('2014-08-28')
+      out.innerHTML += dt.toString() + "<br>"; // Thu Aug 28 2014 02:00:00 GMT+0200
+
+
 
     }
   </script>
