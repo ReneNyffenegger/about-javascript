@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Nan</title>
+
+  <script type="text/javascript">
+
+    function main() {
+
+      var out = document.getElementById('out');
+
+      out.innerHTML  = (  Infinity - 1000   ) + "<br>"; //  Infinity
+      out.innerHTML += (  5 / 0             ) + "<br>"; //  Infinity
+      out.innerHTML += ( -5 / 0             ) + "<br>"; // -Infinity
+      out.innerHTML += (  Infinity/Infinity ) + "<br>"; //  NaN
+      out.innerHTML += (  42      /Infinity ) + "<br>"; //  0
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'>
+  </div>
+</body>
+</html>
+
