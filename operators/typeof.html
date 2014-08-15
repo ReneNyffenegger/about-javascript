@@ -10,7 +10,7 @@
 
     function show_typeof(thing) {
 
-       out.innerHTML += "typeof(" + thing + ") =  " + typeof(thing) + "<br>";
+       out.innerHTML += "typeof(" + thing + ") =  " + (typeof thing)  + "<br>";
 
     }
 
@@ -18,14 +18,19 @@
 
       out = document.getElementById('out');
 
+
       show_typeof(        42 ); // number
       show_typeof(       NaN ); // number
       show_typeof("forty-two"); // string
       show_typeof(      null ); // object
       show_typeof(document   ); // object
       show_typeof(      true ); // boolean
-      show_typeof(show_typeof); // boolean
+      show_typeof(show_typeof); // function
       show_typeof(    /re/   ); // object
+      show_typeof(Infinity   ); // number
+      show_typeof(undefined  ); // undefined
+
+      out.innerHTML += "typeof(foo_bar_baz) = " + typeof(foo_bar_baz) + "<br>"; // undefined
       
     }
   </script>
