@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>undefined</title>
+
+  <script type="text/javascript">
+
+    function main() {
+
+      var out = document.getElementById('out');
+
+      out.innerHTML  = (  undefined + 'Foo'     ) + "<br>"; //  undefinedFoo
+      out.innerHTML  = (  undefined + undefined ) + "<br>"; //  NaN
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'>
+  </div>
+</body>
+</html>
+
