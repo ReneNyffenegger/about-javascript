@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Nan</title>
+
+  <script type="text/javascript">
+
+    function main() {
+
+      var out = document.getElementById('out');
+
+      out.innerHTML  = NaN + 5        + "<br>"; // NaN
+      out.innerHTML += NaN + Infinity + "<br>"; // NaN
+      out.innerHTML += NaN +'Foo'     + "<br>"; // NaNFoo
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'>
+  </div>
+</body>
+</html>
+
