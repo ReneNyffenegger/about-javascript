@@ -18,6 +18,8 @@
       out.innerHTML += parseInt('011     '     ) + '<br>'; // 100
       out.innerHTML += parseInt('0x100   '     ) + '<br>'; // 256
       out.innerHTML += parseInt('  100   ' , 16) + '<br>'; // 256
+      out.innerHTML += parseInt('deadbeef'     ) + '<br>'; // NaN
+      out.innerHTML += parseInt('deadbeef' , 16) + '<br>'; // 3735928559
 
     }
 
