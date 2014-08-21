@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>eval</title>
+
+  <script type="text/javascript">
+
+    var table_, tbody_;
+
+    function eval_string(str) {
+      var tr      = document.createElement('tr');
+      var td_str  = document.createElement('td');
+      var td_eq   = document.createElement('td');
+      var td_eval = document.createElement('td');
+
+      td_str .appendChild(document.createTextNode(     str ));
+      td_eq  .appendChild(document.createTextNode(     '=' ));
+      td_eval.appendChild(document.createTextNode(eval(str)));
+
+      tr.appendChild(td_str );
+      tr.appendChild(td_eq  );
+      tr.appendChild(td_eval);
+
+      tbody_.appendChild(tr);
+      
+    }
+    
+    function main() {
+      
+      table_ = document.createElement('table');
+      tbody_ = document.createElement('tbody');
+
+      table_.appendChild(tbody_);
+
+      document.getElementsByTagName('body')[0].appendChild(table_);
+
+      eval_string("42"                      );
+      eval_string("21 * 2"                  );
+      eval_string("Boolean( 0)"             );
+      eval_string("Boolean(42)"             );
+      eval_string("eval(eval(40 + '+' + 2))");
+      eval_string("typeof(Boolean(42))     ");
+      eval_string("typeof(table_)          ");
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+</body>
+</html>
+
