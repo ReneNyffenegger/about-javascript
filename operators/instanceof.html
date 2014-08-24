@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>instanceof</title>
+
+  <script type="text/javascript">
+
+    var out;
+    function write_out(bool) {
+
+      if (bool) {
+        out.innerHTML += "Yes<br>";
+      }
+      else {
+        out.innerHTML += "No<br>";
+      }
+    }
+
+    
+    function main() {
+
+      table_ = document.createElement('table');
+      tbody_ = document.createElement('tbody');
+      table_.style.borderCollapse='collapse';
+
+      table_.appendChild(tbody_);
+
+      document.getElementsByTagName('body')[0].appendChild(table_);
+    
+      out = document.getElementById('out');
+
+      write_out(new String('foo') instanceof  String);  // Yes
+      write_out("bar" instanceof String);               //  No
+
+  //  ---------------------------------------
+
+      StringBaz = function() {};
+      StringBaz.prototype = String.prototype;
+
+      write_out(StringBaz instanceof String);           //  No
+
+  //  ---------------------------------------
+
+      var baz = new StringBaz();
+      write_out(baz instanceof String);                 // Yes
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id="out"></div>
+</body>
+</html>
