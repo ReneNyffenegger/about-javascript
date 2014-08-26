@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascript: Line Terminators</title>
+  <script type="text/javascript">
+
+    var out;
+
+    function main() {
+      
+      text = document.getElementById('text');
+      out  = document.getElementById('out');
+
+      var source = "x++\u000Ax++\u000Dx++\u2028x++\u2029x++";
+
+      increment_x = new Function("", source);
+
+      x = 0;
+      increment_x();
+
+      text.innerHTML = source;
+
+      out.innerHTML  = "x = " + x;
+
+    }
+
+  </script>
+</head>
+<body onload='main();'>
+
+  <pre id='text'></pre>
+  <pre id='out'></pre>
+
+</body>
+</html>
