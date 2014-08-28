@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>JavaScript: arguments</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function with_params(a1, a2, a3) {
+      out.innerHTML += 'length: ' + arguments.length + '<br>';
+    }
+
+    function without_params() {
+      out.innerHTML += 'length: ' + arguments.length + '<br>';
+    }
+    
+    function main() {
+
+      out = document.getElementById('out');
+
+      with_params   (1, 2, 3   );        // length: 3
+      with_params   (1         );        // length: 1
+      with_params   (          );        // length: 0
+      with_params   (1, 2, 3, 4);        // length: 4
+
+      without_params(1, 2, 3   );        // length: 3
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id="out"></div>
+
+</body>
+</html>
+
