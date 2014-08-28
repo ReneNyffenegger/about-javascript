@@ -15,6 +15,15 @@
     function without_params() {
       out.innerHTML += 'length: ' + arguments.length + '<br>';
     }
+
+    function fooObj() {
+      
+    }
+
+    fooObj.prototype.bar = function () {
+      out.innerHTML += 'length: ' + arguments.length + '<br>';
+    }
+
     
     function main() {
 
@@ -26,6 +35,15 @@
       with_params   (1, 2, 3, 4);        // length: 4
 
       without_params(1, 2, 3   );        // length: 3
+
+      var wo  = new without_params(1);   // length: 1
+
+      without_params.prototype.x = with_params;;
+
+      wo.x(2,3);                         // length: 2
+
+      var foo = new fooObj();
+      foo.bar(1, 2, 3, 4, 5);            // length: 5
 
     }
 
