@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascript equals operator ==</title>
+
+  <script type="text/javascript" src="../js-tablator/tablator.js"></script>
+
+  <script type="text/javascript">
+
+    var table_;
+
+    function equals(a, b, comment) {
+      eval('result =  ' + a + ' == ' + b)
+      table_.addRow(a, '==', b, result, comment);
+    }
+    
+    function main() {
+
+       table_ = new tq84.tablator();
+
+       equals(   '42'       ,      '42' , ''                        );  //  true
+       equals(    '0'       ,       '0' , ''                        );  //  true
+       equals(   '42'       ,     '"42"', ''                        );  //  true
+       equals(   '""'       ,      '"0"', ''                        );  // false
+       equals(    '0'       ,       '""', ''                        );  //  true
+       equals('"false"'     ,    'false', ''                        );  // false
+       equals( 'false'      ,      '"0"', ''                        );  //  true
+       equals( 'false'      ,     'null', ''                        );  // false
+       equals(  'null'      ,'undefined', ''                        );  //  true
+       equals('"\\r\\n\\t"' ,        '0', ''                        );  //  true
+       equals('"\\r\\n\\t "',        '0', 'note the spaces'         );  //  true
+       equals('"\\r   \\t "',        '0', 'note the spaces'         );  //  true
+
+       table_.toBody();
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+</body>
+</html>
