@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>String.match</title>
+
+  <script type="text/javascript">
+    
+    var out;
+    function main() {
+
+      out = document.getElementById('out');
+      var s = "foo 42 bar 19 baz 38 xyz";
+
+      var m = s.match(/\d+/g);
+
+      m.map(function(x) {
+        out.innerHTML += x + "<br>";
+        // 42
+        // 19
+        // 38
+      });
+
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id="out"></div>
+
+  Compare with <a href='../RegExp/exec.html'>RegExp.exec</a>.
+</body>
+</html>
