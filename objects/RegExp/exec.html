@@ -15,7 +15,6 @@
     function title(txt) {
       print ('<b>'+txt+'</b>');
     }
-
     
     function main() {
       out = document.getElementById('out');
@@ -43,6 +42,13 @@
         // baz 38,3,8
       }
 
+      var re_doesnt_match = /blablabla/;
+
+      res = re_doesnt_match.exec("foo 42 bar 19 baz 38 xyz");
+      title(re_doesnt_match);
+      print(res);
+      // null
+
     }
 
   </script>
@@ -52,7 +58,7 @@
 
   <div id="out"></div>
 
-  Compare with <a href='../String/match.html'>String.match</a>.
+  <p>Compare with <a href='../String/match.html'>String.match</a>.
 
 </body>
 </html>
