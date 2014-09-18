@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>RegExp.exec</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function print(txt) {
+      out.innerHTML += txt + "<br>";
+    }
+
+    function title(txt) {
+      print ('<b>'+txt+'</b>');
+    }
+    
+    function main() {
+      out = document.getElementById('out');
+
+      var re_number = /\d+/;
+      title(re_number);
+      var res = re_number.exec("foo 42 bar 19 baz 38 xyz");
+      print (res); // 42
+
+      var re_number_g = /\d+/g;
+      title(re_number_g);
+      var res;
+      while (res = re_number_g.exec("foo 42 bar 19 baz 38 xyz")) {
+        print (res);
+        // 42
+        // 19
+        // 38
+      }
+
+      var re_with_parans = /\w+ +(\d)(\d)/g;
+      while (res = re_with_parans.exec("foo 42 bar 19 baz 38 xyz")) {
+        print (res);
+        // foo 42,4,2
+        // bar 19,1,9
+        // baz 38,3,8
+      }
+
+      var re_doesnt_match = /blablabla/;
+
+      res = re_doesnt_match.exec("foo 42 bar 19 baz 38 xyz");
+      title(re_doesnt_match);
+      print(res);
+      // null
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id="out"></div>
+
+  <p>Compare with <a href='../String/match.html'>String.match</a>.
+
+</body>
+</html>

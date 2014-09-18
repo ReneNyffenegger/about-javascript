@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Javasctipt JSON.parse()</title>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+
+  <script type="text/javascript">
+
+    function main() {
+
+      var obj = JSON.parse('{"foo": "bar", "baz": [0, 1, 2, 3]}');
+
+      out.innerHTML += "foo: "    + obj.foo    + "<br>";
+      out.innerHTML += "baz[1]: " + obj.baz[1] + "<br>";
+    }
+
+  </script>
+</head>
+<body onload="main();">
+
+  <div id="out"></div>
+
+</body>
+</html>
