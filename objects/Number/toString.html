@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Number.toString()</title>
+
+  <script type="text/javascript">
+
+    var out;
+    function hex(n) {
+
+      // See also parseInt('...', 16);
+
+      out.innerHTML += n.toString(16) + '<br>';
+      
+    }
+    
+    function main() {
+
+      out = document.getElementById('out');
+
+      out.style.fontFamily='monospace';
+
+      hex(    5); //     5
+      hex(   16); //    10
+      hex(12345); //  3039
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id='out'>
+  </div>
+</body>
+</html>
+
