@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Number.toFixed()</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function tf(n) {
+
+      out.innerHTML += n.toFixed(3) + '<br>';
+      
+    }
+    
+    function main() {
+
+      out = document.getElementById('out');
+      
+      tf(4     ); //   4.000
+      tf(4.2   ); //   4.200
+      tf(4.1004); //   4.100
+      tf(4.1009); //   4.100
+
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'></div>
+</body>
+</html>
+
