@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascript: this</title>
+  <script type="text/javascript">
+
+    function print(text) {
+      out.innerHTML += text + "<br>";
+    }
+
+    function main() {
+
+      try {
+        const foo = 42;
+        print("foo = " + foo);
+        foo = 1;
+        print("foo = " + foo);
+
+      }
+      catch (e) {
+        print("exception: " + e);
+     // exception: TypeError: invalid assignment to const `foo'
+      }
+    }
+
+  </script>
+</head>
+<body onload='main();'>
+
+  <div id='out'>
+  </div>
+
+</body>
+</html>
