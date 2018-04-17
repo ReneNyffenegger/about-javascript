@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <title>Javascript OO, Example 1, constructor</title>
+
+
+<script type='text/javascript'>
+
+    //  Must be initialized in/after onLoad.
+    var out;
+
+    function print_out(text) {
+        out.innerHTML += '<br>' + text;
+    }
+
+    function someObject(some_value) {
+        print_out('Constructor of someObject');
+
+        this.attribute_1 = some_value;
+        this.attribute_2 = some_value * 2;
+    }
+        
+    function init() {
+
+        out = document.getElementById('out');
+        
+        print_out('init');
+
+        var object_1 = new someObject(1);
+        var object_2 = new someObject(10);
+
+        print_out('object_1.attribute_1: ' + object_1.attribute_1);
+        print_out('object_1.attribute_2: ' + object_1.attribute_2);
+
+        print_out('object_2.attribute_1: ' + object_2.attribute_1);
+        print_out('object_2.attribute_2: ' + object_2.attribute_2);
+    
+    }
+
+</script>
+
+</head>
+
+<body onLoad='init()'>
+
+  <div id='out'>
+    <b>Out</b>:
+  </div>
+
+</body>
+</html>

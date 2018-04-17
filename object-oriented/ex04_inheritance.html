@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <title>Javascript OO, Example 3, Inheritance</title>
+
+
+<script type='text/javascript'>
+
+    //  Must be initialized in/after onLoad.
+    var out;
+
+    function print_out(text) {
+        out.innerHTML += '<br>' + text;
+    }
+
+    //  Define the Base class:
+
+    function BaseClass(text) {
+        print_out('Constructor of BaseClass, text=' + text);
+        this.text = text;
+    }
+
+    BaseClass.prototype.identify = function() {
+        print_out ('My text is ' + this.text);
+    }
+
+    //   Derive from the Base class
+
+    //   DerviedOne:
+
+    function DerivedOne(text) {
+        print_out('Constructor of DerivedOne, text=' + text);
+
+    //  call(X) sets the 'this' in the called method
+    //  to X. So, BaseClass.this will be DerivedOne.this:
+        BaseClass.call(this, text);
+    }
+
+    DerivedOne.prototype = new BaseClass('null');
+
+    DerivedOne.prototype.constructor = DerivedOne;
+
+
+
+
+
+    // Define a method for 'someObject':
+    someObject.prototype.print = function(text) {
+      print_out(text + ', attribute_1=' + this.attribute_1 + ', attribute_2=' + this.attribute_2);
+    }
+        
+    function init() {
+
+      out = document.getElementById('out');
+      
+      var der_1 = new DerivedOne('Derived One');
+//    var der_1 = new BaseClass('Derived One');
+
+      print_out('der_1.text: '+der_1.text);
+
+      der_1.identify();
+
+      print_out('x');
+    
+    }
+
+</script>
+
+</head>
+
+<body onLoad='init()'>
+
+  <div id='out'>
+    <b>Out</b>:
+  </div>
+
+</body>
+</html>
