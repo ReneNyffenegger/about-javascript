@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Determine type of String instance</title>
+
+  <script type="text/javascript">
+    
+    function main() {
+      str = 'Hello world';
+
+      document.getElementById('type').innerHTML = Object.prototype.toString.call(str);
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  The »type« of <code>'Hello world'</code> is: <code><span id='type'></span></code>
+
+</body>
+</html>
