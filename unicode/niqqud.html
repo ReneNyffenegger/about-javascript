@@ -14,12 +14,17 @@
     }
     function main() {
 
-      word_hebrew = 'אָדָם';
-      word_german = 'äöü';
+        word_german = 'äöü';
+        word_hebrew = 'אָדָם';
 
-      do_word(word_hebrew);
-      do_word(word_german);
-      
+     //
+     // Remove Niqqud
+     //
+        word_hebrew_without_niqqud = word_hebrew.replace(/[\u0591-\u05C7]/g, '');
+
+        do_word(word_german);
+        do_word(word_hebrew);
+        do_word(word_hebrew_without_niqqud);
 
     }
 
