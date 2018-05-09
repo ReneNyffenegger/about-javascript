@@ -31,6 +31,7 @@
        equals('"\\r\\n\\t"' ,        '0', ''                        );  //  true
        equals('"\\r\\n\\t "',        '0', 'note the spaces'         );  //  true
        equals('"\\r   \\t "',        '0', 'note the spaces'         );  //  true
+       equals('"א"'         , '"אָ"'     , 'Niqqud'                  );
 
        table_.toBody();
 
