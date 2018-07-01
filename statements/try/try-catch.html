@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascrtipt: try … catch statement</title>
+</head>
+
+<script type="text/javascript">
+    
+function main() {
+
+  try {
+    var i;
+    i = inexstingFunction();
+    alert(i);
+  }
+  catch (e) {
+    alert(e); // ReferenceError: inexistingFunction is not defined
+  }
+
+}
+
+</script>
+
+<body onload='main();'></body>
+
+</html>
