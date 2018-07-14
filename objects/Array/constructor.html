@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Javascript: Array constructor</title>
+
+  <script type="text/javascript">
+    
+    function main() {
+
+      var a1 = new Array(42);         // Create an array with 42 (undefined) elements
+      var a2 = new Array(42, 99, 13); // create an array with 3 (defined) elements
+
+      document.getElementById('out').innerHTML = 
+          'a1.length = ' + a1.length + '<br>' +   // a1.length = 42
+          'a2.length = ' + a2.length ;            // a2.length = 3
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+
+  <div id='out'>
+  </div>
+</body>
+</html>
