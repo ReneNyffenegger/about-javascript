@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>undefined</title>
+
+  <script type="text/javascript">
+
+    var out;
+
+    function evalAndPrint(expr) {
+
+      var res = eval(expr);
+
+      expr.replace(/&/g, '&amp;');
+      expr.replace(/</g, '&lt;' );
+      expr.replace(/g/g, '&gt;' );
+
+
+      if (res) { out.innerHTML += expr + " is true<br>";  } else
+               { out.innerHTML += expr + " is false<br>"; }
+
+    }
+
+    function main() {
+
+      out = document.getElementById('out');
+
+      evalAndPrint('5         ==  undefined'); // false
+      evalAndPrint('5         !=  undefined'); // true
+      evalAndPrint('5         >   undefined'); // false
+      evalAndPrint('undefined >   undefined'); // false
+      evalAndPrint('undefined ==  undefined'); // true
+      evalAndPrint('undefined === undefined'); // true
+      evalAndPrint('NaN       === undefined'); // true
+
+    }
+
+  </script>
+
+</head>
+<body onload='main()';>
+  <div id='out'>
+  </div>
+</body>
+</html>
