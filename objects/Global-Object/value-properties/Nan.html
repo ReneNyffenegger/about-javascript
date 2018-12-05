@@ -10,7 +10,9 @@
 
       var out = document.getElementById('out');
 
-      out.innerHTML  = NaN + 5        + "<br>"; // NaN
+      out.innerHTML += typeof(NaN)    + "<br>"; // number
+
+      out.innerHTML += NaN + 5        + "<br>"; // NaN
       out.innerHTML += NaN + Infinity + "<br>"; // NaN
       out.innerHTML += NaN +'Foo'     + "<br>"; // NaNFoo
 
@@ -24,4 +26,3 @@
   </div>
 </body>
 </html>
-

@@ -10,8 +10,10 @@
 
       var out = document.getElementById('out');
 
-      out.innerHTML  = (  undefined + 'Foo'     ) + "<br>"; //  undefinedFoo
-      out.innerHTML  = (  undefined + undefined ) + "<br>"; //  NaN
+      out.innerHTML  = (  typeof(undefined)     ) + "<br>"; //  undefined
+
+      out.innerHTML += (  undefined + 'Foo'     ) + "<br>"; //  undefinedFoo
+      out.innerHTML += (  undefined + undefined ) + "<br>"; //  NaN
 
     }
 
@@ -23,4 +25,3 @@
   </div>
 </body>
 </html>
-
