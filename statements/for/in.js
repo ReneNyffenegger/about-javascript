@@ -10,6 +10,12 @@ for (i in a) {
   // 1
   // 2
 }
+for (j in a) {
+  print(a[j])
+  // foo
+  // bar
+  // baz
+}
 
 //
 // Iterating over keys in an associative array (hash / dict):
