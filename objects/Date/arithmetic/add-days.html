@@ -10,7 +10,7 @@
 
       var out = document.getElementById('out');
       
-      var dt = new Date (2014, 7, 11); // Aug 11th 2014
+      var dt = new Date (2014, 7, 11, 22, 23, 24); // Aug 11th 2014, 22 hours and 23 minutes
 
       dt.setDate(dt.getDate() + 17 );   // 17 days later (= Aug 28th 2014)
       out.innerHTML += dt.toString() + "<br>";
@@ -21,6 +21,18 @@
       dt.setDate(dt.getDate() + 140);   // Jan 15 2016
       out.innerHTML += dt.toString() + "<br>";
 
+   //
+   // Trying to add fractional day…
+   //
+      dt.setDate(dt.getDate() + 5.0/24.0);
+      out.innerHTML += dt.toString() + "<br>";
+
+   //
+   // Better approach?
+   //
+      dt.setHours(dt.getHours() + 5);
+      out.innerHTML += dt.toString() + "<br>";
+
     }
 
   </script>
@@ -28,8 +40,7 @@
 </head>
 <body onload='main()';>
 
-  <div id='out'></div>
+  <div id='out' style='font-family:monospace'></div>
 
 </body>
 </html>
-
