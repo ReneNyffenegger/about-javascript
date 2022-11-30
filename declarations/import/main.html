@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>JavaScript: import declaration</title>
+</head>
+
+<script type="module">
+// ----------------------------------------
+
+//
+// Note: relative references for the module's
+// path must start with either "/", "./", or "../":
+//
+import cls, { clsTwo } from "./module.js";
+
+
+let obj1 = new cls   ( 42          );
+let obj2 = new clsTwo("Hello World");
+
+// ----------------------------------------
+</script>
+
+<body>
+
+<pre id='out'></pre>
+
+</body>
+</html>
